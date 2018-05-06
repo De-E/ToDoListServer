@@ -6,14 +6,12 @@
 
 module.exports = {
     attributes: {
-        id: {
-            type: "integer",
-            required: true
-        },
         name: {
             type: "string",
             required: true,
             minLength: 2
         }
-    }
+    },
+    
+    datastore: 'mongo',
 };
