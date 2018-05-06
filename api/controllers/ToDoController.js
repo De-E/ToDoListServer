@@ -5,13 +5,5 @@
  */
 
 module.exports = {
-    attributes: {
-        name: {
-            type: "string",
-            required: true,
-            minLength: 2
-        }
-    },
     
-    datastore: 'mongo',
-};
+}
