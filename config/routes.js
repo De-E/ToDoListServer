@@ -24,6 +24,10 @@ module.exports.routes = {
   },
   '/todolist': 'ToDoListController.todolist',
   '/todolist/week': 'ToDoListController.todolistWeek',
+  '/todolist/day' : 'ToDoListController.todolistDay',
+  'POST /todo' : 'ToDoController.create', //create
+  'DELETE /todo' : 'ToDoController.delete', //delete
+  'PUT /todo' : 'ToDoController.update', //update
 
   /***************************************************************************
   *                                                                          *
