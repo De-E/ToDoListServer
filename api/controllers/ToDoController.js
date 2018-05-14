@@ -18,20 +18,41 @@ module.exports = {
             "done": req.body.done,
         };
         
-        await Todo.create(todo);
+        var debug = await Todo.create(todo).fetch();
         
-        return res.ok();
+        return res.json(debug);
     },
     
     delete: async function(req, res)
     {
-        await Todo.destroy({day: req.query.day, month: req.query.month,year: req.query.year,todo: req.query.todo});
+        var _id = req.query.id;
         
-        return res.ok();
+        var debug = await Todo
+                .destroy({ id: _id})
+                .fetch();
+        
+        return res.json(debug);
     },
     
-    update: function(req, res)
+    update: async function(req, res)
     {
-        return res.ok();
+        var todo = {
+            day: req.body.day,
+            month: req.body.month,
+            year: req.body.year,
+            h: req.body.h,
+            m: req.body.m,
+            time: req.body.time,
+            todo: req.body.todo,
+            done: req.body.done,
+        };
+        
+        var _id = req.body.id;
+        
+        var debug = await Todo.update({_id: _id})
+                .set(todo)
+                .fetch();
+        
+        return res.json(debug);
     },
 }

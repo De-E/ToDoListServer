@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-    attributes: {
+    attributes: {   
         day : {
             type: "number",
             required: true,
